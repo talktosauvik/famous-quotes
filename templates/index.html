@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>InspireQuotes • 100 Famous Quotes</title>
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+  <div class="app-container">
+    <header class="app-header">
+      <div class="logo-area">
+        <span class="logo-icon">“</span>
+        <div>
+          <h1>InspireQuotes</h1>
+          <p class="subtitle">Explore 100 timeless quotes from history's greatest thinkers, leaders, and visionaries</p>
+        </div>
+      </div>
+    </header>
+
+    <!-- Random Quote Featured Section -->
+    <section class="featured-section">
+      <div class="quote-card featured-card" id="featured-card">
+        <div class="card-top">
+          <span class="category-badge" id="featured-category">Loading...</span>
+          <div class="action-buttons">
+            <button class="btn btn-icon" id="copy-featured-btn" title="Copy to clipboard">
+              <span id="copy-icon">📋</span>
+              <span id="copy-text">Copy</span>
+            </button>
+          </div>
+        </div>
+        <blockquote class="quote-content">
+          <p id="featured-text">Loading an inspiring quote for you...</p>
+        </blockquote>
+        <div class="card-footer">
+          <cite id="featured-author" class="author-name">— Loading...</cite>
+          <button class="btn btn-primary" id="new-quote-btn">
+            <span>✨</span> New Random Quote
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Search & Filter Controls -->
+    <section class="filter-section">
+      <div class="search-bar-wrapper">
+        <span class="search-icon">🔍</span>
+        <input 
+          type="text" 
+          id="search-input" 
+          placeholder="Search quotes by keyword, theme, or author name..." 
+          aria-label="Search quotes"
+          autocomplete="off"
+        >
+        <button class="btn btn-sm btn-clear" id="clear-search-btn" title="Clear search" style="display: none;">✕</button>
+      </div>
+
+      <div class="filter-controls">
+        <div class="select-group">
+          <label for="category-select">Category:</label>
+          <select id="category-select">
+            <option value="">All Categories</option>
+          </select>
+        </div>
+
+        <div class="select-group">
+          <label for="author-select">Author:</label>
+          <select id="author-select">
+            <option value="">All Authors</option>
+          </select>
+        </div>
+
+        <button class="btn btn-secondary btn-sm" id="reset-filters-btn">Reset Filters</button>
+      </div>
+
+      <!-- Quick category pills -->
+      <div class="category-pills" id="category-pills" role="tablist" aria-label="Quick Category Filters">
+        <button class="pill active" data-category="">All</button>
+      </div>
+    </section>
+
+    <!-- Search Results / Catalog Section -->
+    <section class="catalog-section">
+      <div class="catalog-header">
+        <h2 id="catalog-title">All Quotes</h2>
+        <span class="count-badge" id="results-count">100 quotes</span>
+      </div>
+
+      <div class="quotes-grid" id="quotes-grid">
+        <!-- Rendered safely via plain Vanilla JavaScript -->
+      </div>
+
+      <div class="empty-state" id="empty-state" style="display: none;">
+        <span class="empty-icon">🔎</span>
+        <h3>No matching quotes found</h3>
+        <p>Try searching with different keywords or clearing active filters.</p>
+        <button class="btn btn-secondary" id="empty-reset-btn">Clear All Filters</button>
+      </div>
+    </section>
+
+    <footer class="app-footer">
+      <p>Built with Python Flask &amp; Vanilla JavaScript • 100 Famous Quotes</p>
+    </footer>
+  </div>
+
+  <script src="/static/js/app.js"></script>
+</body>
+</html>
